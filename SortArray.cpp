@@ -30,6 +30,7 @@ void _selectsort(T arr[], int length) {
 		}
 	}
 }
+
 template <class T>
 void _selectsort2(T arr[], int length) {
 	int min = 0;
@@ -48,6 +49,24 @@ void _selectsort2(T arr[], int length) {
 
 	}
 }
+
+template <class T>
+void BubbleSort(T arr[], int length) {
+	//int temp = 0;
+	for (int i = 0; i < length; i++)
+	{
+		for (int j = 0; j < length - 1; j++)
+		{
+			if (arr[j] > arr[j + 1]) {
+				//temp = arr[j];
+				//arr[j] = arr[j + 1];
+				//arr[j + 1] = temp;
+				swap(arr[j], arr[j + 1]);
+			}
+		}
+	}
+}
+
 int main()
 {
 	setlocale(0, "");
@@ -58,8 +77,9 @@ int main()
 	for (int i = 0; i < length; i++) {
 		arr[i] = 1 + rand() % 100;
 	}
-
-	_selectsort2(arr,length);
+	//_selectsort(arr,length);
+	//_selectsort2(arr,length);
+	BubbleSort(arr, length);
 
 	for (int i = 0; i < length; i++) {
 		cout << arr[i] << " "; Sleep(100);// красивое
