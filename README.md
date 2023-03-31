@@ -1,2 +1,2 @@
-# SortAraryCPP
+# SortArrayCPP
 BubbleSort very simple.
