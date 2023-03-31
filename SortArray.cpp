@@ -30,6 +30,24 @@ void _selectsort(T arr[], int length) {
 		}
 	}
 }
+template <class T>
+void _selectsort2(T arr[], int length) {
+	int min = 0;
+	int temp = 0;
+
+	for (int i = 0; i < length; i++)
+	{
+		min = i;
+		for (int j = i+1; j < length; j++)
+		{
+			min = (arr[j] < arr[min]) ? j : min;
+		}
+		if (i != min) {
+			swap(arr[i], arr[min]);
+		}
+
+	}
+}
 int main()
 {
 	setlocale(0, "");
@@ -41,7 +59,7 @@ int main()
 		arr[i] = 1 + rand() % 100;
 	}
 
-	_selectsort(arr,length);
+	_selectsort2(arr,length);
 
 	for (int i = 0; i < length; i++) {
 		cout << arr[i] << " "; Sleep(100);// красивое
